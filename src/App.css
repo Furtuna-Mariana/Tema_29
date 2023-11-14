@@ -6,3 +6,18 @@
 .button {
   border: 2px solid green;
 }
+
+.toDoListWrraper {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+
+.toDoList {
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  gap: 16px;
+}
+

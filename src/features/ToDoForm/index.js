@@ -2,21 +2,25 @@ import { useState } from "react"
 import Button from "../../components/Button"
 import Input from "../../components/Input"
 import './style.css'
+import { useEffect } from "react"
 
-const ToDoForm = ({listItems, setItems}) => {
-    const [toDo, seToDo] = useState('')
+const ToDoForm = ({handleChange, value}) => {
+    const [toDo, setToDo] = useState(value)
 
-    const addToDo = () => {
-        const found = listItems.find((item) => toDo === item.title) 
-        if(found || !toDo) return alert(found? 'To be should be unique' : 'Title should not be empty')
-        setItems({title: toDo, checked: false})
-        seToDo('')
+    const handleEditToDo = () => {
+       handleChange(toDo)
+       setToDo('')
     }
 
+    useEffect(() => {
+        console.log()
+        setToDo(value)
+    }, [value])
+
     return (
-        <div className="container" >
-            <Input value={toDo} setValue={seToDo}/>
-            <Button name='Add to do' onClick={addToDo} />
+        <div className="formContainer" >
+            <Input value={toDo} setValue={setToDo}/>
+            <Button name='Add to do' onClick={handleEditToDo} />
         </div>
     )
 }

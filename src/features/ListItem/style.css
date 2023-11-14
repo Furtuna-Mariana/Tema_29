@@ -1,8 +1,51 @@
-.listItemwrapper {
+.listItemWrraper {
     display: flex;
     height: 40px;
     padding: 4px 8px;
     align-items: center;
+    justify-content: space-between;
     border: 1px solid gray;
+}
+
+.listItemSideWrapper {
+    display: flex;
     gap: 8px;
 }
+
+.listItemDeletWrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.itemIcon {
+    cursor: pointer;
+}
+
+.toDoListHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.headerIcon {
+    cursor: pointer;
+ 
+    i {
+        width: 32px;
+    }
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+.selected {
+    border: 1px solid gray;
+}
+
+
+
+
